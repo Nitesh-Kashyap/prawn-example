@@ -3776,3 +3776,177 @@ Started GET "/service-worker.js" for ::1 at 2023-04-13 15:20:40 +0530
   
 ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
   
+Started GET "/posts/6" for ::1 at 2023-04-13 15:34:45 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 6 AND `active_storage_attachments`.`record_type` = 'Post' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/posts/_post.html.erb:6
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 4 LIMIT 1[0m
+  ↳ app/views/posts/_post.html.erb:7
+  Rendered posts/_post.html.erb (Duration: 29.8ms | Allocations: 55330)
+  Rendered posts/show.html.erb within layouts/application (Duration: 32.6ms | Allocations: 57404)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 150)
+  Rendered layout layouts/application.html.erb (Duration: 61.3ms | Allocations: 97182)
+Completed 200 OK in 132ms (Views: 59.1ms | ActiveRecord: 6.4ms | Allocations: 125577)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--029503e3c21ee903014789701687bdeb52d1e44e/Screenshot%20from%202023-04-13%2015-16-11.png" for ::1 at 2023-04-13 15:34:45 +0530
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--029503e3c21ee903014789701687bdeb52d1e44e", "filename"=>"Screenshot from 2023-04-13 15-16-11"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 4 LIMIT 1[0m
+[36m  Disk Storage (1.5ms) [0m[34mGenerated URL for file at key: 7eou3jl6h9a5ud39dlezgjujoupn (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlZ2ZFROcWJEWm9PV0UxZFdRek9XUnNaWHBuYW5WcWIzVndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxibk5vYjNRZ1puSnZiU0F5TURJekxUQTBMVEV6SURFMUxURTJMVEV4TG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25VMk55WldWdWMyaHZkQ1V5TUdaeWIyMGxNakF5TURJekxUQTBMVEV6SlRJd01UVXRNVFl0TVRFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMy0wNC0xM1QxMDowOTo0NS40MDlaIiwicHVyIjoiYmxvYl9rZXkifX0=--c714e2d10a6763d8869f204c14ad8e4f80a2d31e/Screenshot%20from%202023-04-13%2015-16-11.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlZ2ZFROcWJEWm9PV0UxZFdRek9XUnNaWHBuYW5WcWIzVndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxibk5vYjNRZ1puSnZiU0F5TURJekxUQTBMVEV6SURFMUxURTJMVEV4TG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25VMk55WldWdWMyaHZkQ1V5TUdaeWIyMGxNakF5TURJekxUQTBMVEV6SlRJd01UVXRNVFl0TVRFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMy0wNC0xM1QxMDowOTo0NS40MDlaIiwicHVyIjoiYmxvYl9rZXkifX0=--c714e2d10a6763d8869f204c14ad8e4f80a2d31e/Screenshot%20from%202023-04-13%2015-16-11.png
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 4340)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlZ2ZFROcWJEWm9PV0UxZFdRek9XUnNaWHBuYW5WcWIzVndiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOamNtVmxibk5vYjNRZ1puSnZiU0F5TURJekxUQTBMVEV6SURFMUxURTJMVEV4TG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25VMk55WldWdWMyaHZkQ1V5TUdaeWIyMGxNakF5TURJekxUQTBMVEV6SlRJd01UVXRNVFl0TVRFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyMy0wNC0xM1QxMDowOTo0NS40MDlaIiwicHVyIjoiYmxvYl9rZXkifX0=--c714e2d10a6763d8869f204c14ad8e4f80a2d31e/Screenshot%20from%202023-04-13%2015-16-11.png" for ::1 at 2023-04-13 15:34:45 +0530
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screenshot from 2023-04-13 15-16-11"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 333)
+
+
+Started GET "/service-worker.js" for ::1 at 2023-04-13 15:34:47 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+Started GET "/posts/6/download?preview=true" for ::1 at 2023-04-13 15:34:50 +0530
+Processing by PostsController#download as HTML
+  Parameters: {"preview"=>"true", "id"=>"6"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 6 AND `active_storage_attachments`.`record_type` = 'Post' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:82:in `block in download'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:82:in `block in download'
+[36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: 7eou3jl6h9a5ud39dlezgjujoupn[0m
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 10)
+Sent data Aman Raj Mishra .pdf (1.5ms)
+Completed 200 OK in 555ms (Views: 1.3ms | ActiveRecord: 1.2ms | Allocations: 4299416)
+
+
+Started GET "/service-worker.js" for ::1 at 2023-04-13 15:34:52 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+Started GET "/service-worker.js" for ::1 at 2023-04-13 15:35:22 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+Started GET "/posts/6/download?preview=true" for ::1 at 2023-04-13 15:37:08 +0530
+Processing by PostsController#download as HTML
+  Parameters: {"preview"=>"true", "id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 6 AND `active_storage_attachments`.`record_type` = 'Post' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:82:in `block in download'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:82:in `block in download'
+[36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: 7eou3jl6h9a5ud39dlezgjujoupn[0m
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 7)
+Sent data Aman Raj Mishra .pdf (1.2ms)
+Completed 200 OK in 734ms (Views: 1.0ms | ActiveRecord: 5.1ms | Allocations: 4758376)
+
+
+Started GET "/service-worker.js" for ::1 at 2023-04-13 15:37:10 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+Started GET "/service-worker.js" for ::1 at 2023-04-13 15:37:40 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+Started GET "/posts/6/download?preview=true" for ::1 at 2023-04-13 15:38:03 +0530
+Processing by PostsController#download as HTML
+  Parameters: {"preview"=>"true", "id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 6 AND `active_storage_attachments`.`record_type` = 'Post' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:82:in `block in download'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:82:in `block in download'
+[36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: 7eou3jl6h9a5ud39dlezgjujoupn[0m
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 7)
+Sent data Aman Raj Mishra .pdf (1.1ms)
+Completed 200 OK in 771ms (Views: 0.9ms | ActiveRecord: 4.4ms | Allocations: 4758382)
+
+
+Started GET "/service-worker.js" for ::1 at 2023-04-13 15:38:05 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+Started GET "/service-worker.js" for ::1 at 2023-04-13 15:38:35 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+Started GET "/posts/6/download?preview=true" for ::1 at 2023-04-13 15:49:55 +0530
+Processing by PostsController#download as HTML
+  Parameters: {"preview"=>"true", "id"=>"6"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms | Allocations: 8558)
+
+
+  
+NoMethodError (undefined method `generate_post_pdf' for #<Post id: 6, title: "Aman Raj Mishra ", description: "The standard Lorem Ipsum passage, used since the 1...", created_at: "2023-04-13 09:30:34.684429000 +0000", updated_at: "2023-04-13 09:50:09.518646000 +0000">):
+  
+app/controllers/posts_controller.rb:61:in `download'
+Started GET "/service-worker.js" for ::1 at 2023-04-13 15:49:57 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+Started GET "/service-worker.js" for ::1 at 2023-04-13 15:50:26 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+Started GET "/posts/6/download?preview=true" for ::1 at 2023-04-13 15:54:43 +0530
+Processing by PostsController#download as HTML
+  Parameters: {"preview"=>"true", "id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 6 AND `active_storage_attachments`.`record_type` = 'Post' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/models/post.rb:29:in `block in generate_post_pdf'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 4 LIMIT 1[0m
+  ↳ app/models/post.rb:29:in `block in generate_post_pdf'
+[36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: 7eou3jl6h9a5ud39dlezgjujoupn[0m
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 7)
+Sent data Aman Raj Mishra .pdf (1.2ms)
+Completed 200 OK in 672ms (Views: 1.0ms | ActiveRecord: 5.7ms | Allocations: 4760722)
+
+
+Started GET "/service-worker.js" for ::1 at 2023-04-13 15:54:45 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+Started GET "/service-worker.js" for ::1 at 2023-04-13 15:55:14 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+Started GET "/posts/6/download?preview=true" for ::1 at 2023-04-13 15:56:30 +0530
+Processing by PostsController#download as HTML
+  Parameters: {"preview"=>"true", "id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 6 AND `active_storage_attachments`.`record_type` = 'Post' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/models/post.rb:29:in `block in generate_post_pdf'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 4 LIMIT 1[0m
+  ↳ app/models/post.rb:29:in `block in generate_post_pdf'
+[36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: 7eou3jl6h9a5ud39dlezgjujoupn[0m
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 7)
+Sent data Aman Raj Mishra .pdf (1.2ms)
+Completed 200 OK in 696ms (Views: 1.0ms | ActiveRecord: 5.1ms | Allocations: 4760741)
+
+
+Started GET "/service-worker.js" for ::1 at 2023-04-13 15:56:32 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  

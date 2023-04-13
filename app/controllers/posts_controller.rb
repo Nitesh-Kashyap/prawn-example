@@ -58,32 +58,15 @@ class PostsController < ApplicationController
   end
 
   def download
-    post_pdf = Prawn::Document.new
-    post_pdf.repeat(:all) do
-      post_pdf.bounding_box([post_pdf.bounds.left, post_pdf.bounds.top], width: post_pdf.bounds.width) do 
-        post_pdf.text 'blog app', size: 40, style: :bold, align: :center
-        post_pdf.stroke_horizontal_rule
-      end
-      post_pdf.move_down 30 
+    post_pdf = @post.generate_post_pdf
+    if params[:preview].present?
+      send_data(post_pdf.render, filename: "#{@post.title}.pdf", type: 'application/pdf', disposition: 'inline')
+    else
+      send_data(post_pdf.render, filename: "#{@post.title}.pdf", type: 'application/pdf')
     end
-
-    post_pdf.bounding_box([post_pdf.bounds.left, post_pdf.cursor], width: post_pdf.bounds.width,height: post_pdf.cursor) do
-    post_pdf.font('Times-Roman') do
-    post_pdf.text @post.title, size: 30, style: :bold, align: :center
   end
-  post_pdf.image StringIO.open(@post.image.download), at: [35,600], width: 500
-  post_pdf.move_down 300
-  post_pdf.text @post.description, line_height: 8
-end
 
-if params[:preview].present?
-  send_data(post_pdf.render, filename: "#{@post.title}.pdf", type: 'application/pdf', disposition: 'inline')
-else
-  send_data(post_pdf.render, filename: "#{@post.title}.pdf", type: 'application/pdf')
-end
-end
-
-private
+  private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
