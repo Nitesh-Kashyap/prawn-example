@@ -3,6 +3,10 @@
     <%= post.title %>
   </h1>
 
+  <% if @post.image.attached? %>
+  <%= image_tag @post.image %>
+  <% end %>
+
   <p class= "lead">
     <%= post.description %>
   </p>

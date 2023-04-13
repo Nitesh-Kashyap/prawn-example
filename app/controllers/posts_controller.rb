@@ -71,7 +71,7 @@ class PostsController < ApplicationController
     post_pdf.font('Times-Roman') do
     post_pdf.text @post.title, size: 30, style: :bold, align: :center
   end
-  post_pdf.image "#{Rails.root}/app/assets/images/abc.png", at: [35,600], width: 500
+  post_pdf.image StringIO.open(@post.image.download), at: [35,600], width: 500
   post_pdf.move_down 300
   post_pdf.text @post.description, line_height: 8
 end
@@ -91,6 +91,6 @@ private
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :description)
+      params.require(:post).permit(:title, :description, :image)
     end
   end
